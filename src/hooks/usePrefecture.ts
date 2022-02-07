@@ -5,7 +5,6 @@ const usePrefecture = () => {
   const [prefectures, setPrefectures] = useState<Prefectures>();
   const fetchPrefectures = async () => {
     const res = await getPrefectures();
-    console.log(res);
     setPrefectures(res);
   };
 

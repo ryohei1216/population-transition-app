@@ -1,0 +1,13 @@
+.prefectures-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 40px 40px 40px;
+  flex-wrap: wrap;
+}
+.checkbox-wrapper {
+  width: 100px;
+  font-size: 16px;
+  align-items: center;
+}

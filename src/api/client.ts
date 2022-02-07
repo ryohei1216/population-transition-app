@@ -20,7 +20,6 @@ export default async function get<
       'X-API-KEY': 'CX1V0FJ7UDeE2vnwCGDuFMexbADUAYuGAfIEnTlj',
     },
   });
-  console.log(res);
 
   // eslint-disable-next-line
   return await res.json();
