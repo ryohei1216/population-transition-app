@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import '../css/PopulationTransition.css';
 import Prefectures from '../components/Prefectures';
+import PopulationGraph from '../components/PopulationGraph';
 import { Prefecture } from '../api/prefectures';
 
 const PopulationTransition: FC = () => {
@@ -13,6 +14,9 @@ const PopulationTransition: FC = () => {
       </div>
       <div className="prefectures-container">
         <Prefectures setPrefectureList={setPrefectureList} />
+      </div>
+      <div className="population-graph-container">
+        <PopulationGraph />
       </div>
     </div>
   );
