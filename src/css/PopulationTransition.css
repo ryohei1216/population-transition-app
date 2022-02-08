@@ -1,3 +1,44 @@
 .container {
   text-align: center;
 }
+.prefectures-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.prefectures-wrapper {
+  padding-left: 60px;
+}
+.prefectures-group {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.checkbox-wrapper {
+  width: 100px;
+  font-size: 16px;
+  align-items: center;
+  text-align: left;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 470px) {
+  h1 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  .prefectures-wrapper {
+    padding-left: 30px;
+  }
+  .checkbox-wrapper {
+    font-size: 12px;
+    width: 70px;
+  }
+}
