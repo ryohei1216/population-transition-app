@@ -38,13 +38,20 @@ module.exports = {
         extensions: ['.jsx', '.tsx'],
       },
     ],
-    'react/react-in-jsx-scope': 'off',
     'no-void': [
       'error',
       {
         allowAsStatement: true,
       },
     ],
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'function-expression',
+      },
+    ],
+    'arrow-body-style': 'off',
   },
   settings: {
     'import/resolver': {
