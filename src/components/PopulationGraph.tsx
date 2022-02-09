@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   ResponsiveContainer,
   LineChart,
@@ -9,6 +9,7 @@ import {
   Legend,
   Line,
 } from 'recharts';
+import { Population } from '../hooks/usePopulation';
 
 const data = [
   {
@@ -54,14 +55,39 @@ const data = [
     amt: 2100,
   },
 ];
+type Props = {
+  populations: Population[];
+};
+const PopulationGraph: FC<Props> = ({ populations }) => {
+  const array = [];
+  for (let i = 0; i < populations[0]?.result.data[0].data.length; i += 1) {
+    let populationData = {};
+    populations.forEach((population) => {
+      populationData = {
+        ...populationData,
+        [`${population.prefName}`]: population.result.data[0].data[i].value,
+      };
+    });
+    populationData = {
+      ...populationData,
+      name: `${populations[0].result.data[0].data[i].year}`,
+    };
+    array.push(populationData);
+  }
+  console.log(array);
 
-const PopulationGraph = () => {
+  const hexStr = '秋田県'
+    .split('')
+    .map((v) => v.charCodeAt(0).toString(16))
+    .join(' ');
+  console.log(hexStr);
+
   return (
-    <ResponsiveContainer width={900} height={500}>
+    <ResponsiveContainer width="90%" height={500}>
       <LineChart
         width={730}
         height={250}
-        data={data}
+        data={array}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
@@ -69,8 +95,15 @@ const PopulationGraph = () => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="pv" stroke="#8884d8" />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+        {populations.length > 0 &&
+          populations.map((population) => (
+            <Line
+              type="monotone"
+              dataKey={`${population.prefName}`}
+              // TODO:都道府県の文字列を16進数のcolorに変換
+              stroke={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
+            />
+          ))}
       </LineChart>
     </ResponsiveContainer>
   );
