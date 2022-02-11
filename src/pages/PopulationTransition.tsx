@@ -1,11 +1,21 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import '../css/PopulationTransition.css';
 import Prefectures from '../components/Prefectures';
+import PopulationGraph from '../components/PopulationGraph';
 import { Prefecture } from '../api/prefectures';
+import usePopulation from '../hooks/usePopulation';
 
 const PopulationTransition: FC = () => {
   const [prefectureList, setPrefectureList] = useState<Prefecture[]>([]);
-  console.log(prefectureList);
+  const { selectedAllPopulations, fetchSelectedAllPopulations } =
+    usePopulation();
+  useEffect(() => {
+    fetchSelectedAllPopulations(prefectureList).catch((err) => {
+      console.error(err);
+    });
+    // eslint-disable-next-line
+  }, [prefectureList]);
+  console.log(selectedAllPopulations);
   return (
     <div className="container">
       <div>
@@ -13,6 +23,9 @@ const PopulationTransition: FC = () => {
       </div>
       <div className="prefectures-container">
         <Prefectures setPrefectureList={setPrefectureList} />
+      </div>
+      <div className="population-graph-container">
+        <PopulationGraph populations={selectedAllPopulations} />
       </div>
     </div>
   );
