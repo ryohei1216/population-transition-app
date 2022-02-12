@@ -10,8 +10,8 @@ const PopulationTransition: FC = () => {
   const { selectedAllPopulations, fetchSelectedAllPopulations } =
     usePopulation();
   useEffect(() => {
-    fetchSelectedAllPopulations(prefectureList).catch((err) => {
-      console.error(err);
+    fetchSelectedAllPopulations(prefectureList).catch(() => {
+      throw new Error('Failed fetch populations');
     });
     // eslint-disable-next-line
   }, [prefectureList]);

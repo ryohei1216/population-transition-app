@@ -9,8 +9,8 @@ const usePrefecture = () => {
   };
 
   useEffect(() => {
-    fetchPrefectures().catch((err) => {
-      console.error(err);
+    fetchPrefectures().catch(() => {
+      throw new Error('Failed fetch prefectures');
     });
   }, []);
 
