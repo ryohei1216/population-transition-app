@@ -1,10 +1,11 @@
 .container {
   text-align: center;
+  padding-bottom: 100px;
 }
 .prefectures-container {
   width: 100%;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
 }
 .prefectures-wrapper {
   padding-left: 60px;
@@ -25,9 +26,32 @@
 .recharts-responsive-container {
   margin: 0 auto;
 }
+.population-graph-container {
+  position: relative;
+}
+.label-yaxis {
+  position: absolute;
+  top: -40px;
+  left: 16px;
+}
+
 @media (max-width: 500px) {
   h1 {
     font-size: 24px;
+  }
+  .label-yaxis,
+  .label-xaxis {
+    font-size: 14px;
+  }
+  .label-yaxis {
+    top: -20px;
+  }
+  .yAxis,
+  .xAxis {
+    font-size: 12px;
+  }
+  .recharts-legend-wrapper {
+    font-size: 12px;
   }
 }
 @media (max-width: 470px) {
