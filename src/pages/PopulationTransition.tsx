@@ -15,7 +15,6 @@ const PopulationTransition: FC = () => {
     });
     // eslint-disable-next-line
   }, [prefectureList]);
-  console.log(selectedAllPopulations);
   return (
     <div className="container">
       <div>
