@@ -31,8 +31,6 @@ const PopulationGraph: FC<Props> = ({ populations }) => {
     array.push(populationData);
   }
 
-  const { innerWidth } = window;
-
   return (
     <div>
       <ResponsiveContainer width="100%" height={500}>
@@ -49,6 +47,7 @@ const PopulationGraph: FC<Props> = ({ populations }) => {
           {populations.length > 0 &&
             populations.map((population) => (
               <Line
+                key={`${population.prefCode}`}
                 type="monotone"
                 dataKey={`${population.prefName}`}
                 // TODO:都道府県の文字列を16進数のcolorに変換
