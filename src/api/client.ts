@@ -1,6 +1,6 @@
 type EmptyObject = Record<string, never>;
-// TODO：エンドポイントを環境変数へ
-const PATH_PREFIX = 'https://opendata.resas-portal.go.jp';
+const PATH_PREFIX = process.env.REACT_APP_API_DOMAIN || '';
+const API_KEY = process.env.REACT_APP_API_KEY || '';
 
 export default async function get<
   Query extends { [key: string]: string | number } = EmptyObject,
@@ -18,8 +18,7 @@ export default async function get<
   const res = await fetch(url.toString(), {
     method: 'GET',
     headers: {
-      // TODO:API-KEYを環境変数へ
-      'X-API-KEY': 'CX1V0FJ7UDeE2vnwCGDuFMexbADUAYuGAfIEnTlj',
+      'X-API-KEY': `${API_KEY}`,
     },
   });
 
