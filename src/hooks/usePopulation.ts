@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TotalPopulation, getPopulation, Query } from '../api/population';
+import { TotalPopulation, getPopulation } from '../api/population';
 import { Prefecture } from '../api/prefectures';
 
 export type Population = TotalPopulation & Prefecture;
