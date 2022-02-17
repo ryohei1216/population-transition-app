@@ -13,8 +13,7 @@ const PopulationTransition: FC = () => {
     fetchSelectedAllPopulations(prefectureList).catch(() => {
       throw new Error('Failed fetch populations');
     });
-    // eslint-disable-next-line
-  }, [prefectureList]);
+  }, [prefectureList, fetchSelectedAllPopulations]);
   return (
     <div className="container">
       <div>
