@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Prefecture } from '../api/prefectures';
 import usePrefectures from '../hooks/usePrefecture';
 
@@ -29,6 +29,7 @@ const Prefectures: FC<Props> = ({ setPrefectureList }) => {
             prefectures.result.map((prefecture) => (
               <div className="checkbox-wrapper" key={prefecture.prefCode}>
                 <input
+                  data-testid={prefecture.prefName}
                   type="checkbox"
                   onClick={() => onClickCheckbox(prefecture)}
                 />
