@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Prefectureコンポーネントのテスト APIから都道府県の取得・表示 1`] = `
+<DocumentFragment>
+  <div>
+    <h3>
+      都道府県
+    </h3>
+    <div
+      class="prefectures-wrapper"
+    >
+      <div
+        class="prefectures-group"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Prefectureコンポーネントのテスト APIから都道府県の取得・表示 2`] = `
+<DocumentFragment>
+  <div>
+    <h3>
+      都道府県
+    </h3>
+    <div
+      class="prefectures-wrapper"
+    >
+      <div
+        class="prefectures-group"
+      >
+        <div
+          class="checkbox-wrapper"
+          data-testid="1"
+        >
+          <input
+            data-testid="北海道"
+            type="checkbox"
+          />
+          北海道
+        </div>
+        <div
+          class="checkbox-wrapper"
+          data-testid="2"
+        >
+          <input
+            data-testid="青森県"
+            type="checkbox"
+          />
+          青森県
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Prefectureコンポーネントのテスト checkboxクリック 1`] = `
+<DocumentFragment>
+  <div>
+    <h3>
+      都道府県
+    </h3>
+    <div
+      class="prefectures-wrapper"
+    >
+      <div
+        class="prefectures-group"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Prefectureコンポーネントのテスト checkboxクリック 2`] = `
+<DocumentFragment>
+  <div>
+    <h3>
+      都道府県
+    </h3>
+    <div
+      class="prefectures-wrapper"
+    >
+      <div
+        class="prefectures-group"
+      >
+        <div
+          class="checkbox-wrapper"
+          data-testid="1"
+        >
+          <input
+            data-testid="北海道"
+            type="checkbox"
+          />
+          北海道
+        </div>
+        <div
+          class="checkbox-wrapper"
+          data-testid="2"
+        >
+          <input
+            data-testid="青森県"
+            type="checkbox"
+          />
+          青森県
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
