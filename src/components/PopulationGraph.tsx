@@ -47,6 +47,7 @@ const PopulationGraph: FC<Props> = ({ populations }) => {
           {populations.length > 0 &&
             populations.map((population) => (
               <Line
+                className={population.prefName}
                 key={`${population.prefCode}`}
                 type="monotone"
                 dataKey={`${population.prefName}`}
