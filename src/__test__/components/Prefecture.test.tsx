@@ -1,16 +1,7 @@
-import React, { useState } from 'react';
-import {
-  render,
-  screen,
-  cleanup,
-  fireEvent,
-  waitFor,
-} from '@testing-library/react';
-import renderer from 'react-test-renderer';
-import { act } from 'react-dom/test-utils';
+import React from 'react';
+import { render, screen, cleanup, fireEvent } from '@testing-library/react';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import { Prefecture } from '../../api/prefectures';
 import 'whatwg-fetch';
 import Prefectures from '../../components/Prefectures';
 
