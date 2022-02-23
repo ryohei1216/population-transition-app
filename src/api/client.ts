@@ -1,5 +1,6 @@
 type EmptyObject = Record<string, never>;
-const PATH_PREFIX = process.env.REACT_APP_API_DOMAIN || '';
+const PATH_PREFIX =
+  process.env.REACT_APP_API_DOMAIN || 'https://opendata.resas-portal.go.jp';
 const API_KEY = process.env.REACT_APP_API_KEY || '';
 
 export default async function get<
